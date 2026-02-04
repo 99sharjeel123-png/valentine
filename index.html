@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Will You Be My Valentine?</title>
-  
-  
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -59,6 +57,11 @@
       color:#b30059;
     }
 
+    h2{
+      color:#ff3366;
+      margin-bottom:10px;
+    }
+
     p{
       font-size:15px;
       color:#4a4a4a;
@@ -108,11 +111,12 @@
 </head>
 <body>
 
+  <!-- FIRST CARD -->
   <div class="card" id="card">
     <div class="heart">❤️</div>
     <h1>Will you be my Valentine?</h1>
     <h2>Qalbi💗</h2>
-    
+
     <p>
       From the very first moment, you became my calm, my smile, and my favorite feeling.  
       This is not just a question, it’s my heart asking yours to stay with me.
@@ -124,54 +128,54 @@
     </div>
   </div>
 
+  <!-- CELEBRATION CARD -->
   <div class="card celebrate" id="celebrate">
     <div class="heart">💘</div>
     <h1>She said YES!</h1>
-    <p>
-      <div id="poem" style="display:none; margin-top:30px; font-size:18px; line-height:1.8;">
-  <p>
-    I did not fall for you all at once,<br>
-    I fell slowly—<br>
-    like the sky learning how to hold the stars.<br><br>
 
-    You arrived quietly,<br>
-    and somehow the world learned gentleness.<br>
-    Even time began to walk softer<br>
-    when it passed through your name.<br><br>
+    <div id="poem" style="margin-top:30px; font-size:18px; line-height:1.8;">
+      <p>
+        I did not fall for you all at once,<br>
+        I fell slowly—<br>
+        like the sky learning how to hold the stars.<br><br>
 
-    Loving you feels less like fire<br>
-    and more like warmth—<br>
-    the kind that stays<br>
-    long after the night has gone.<br><br>
+        You arrived quietly,<br>
+        and somehow the world learned gentleness.<br>
+        Even time began to walk softer<br>
+        when it passed through your name.<br><br>
 
-    If forever ever asks me what it means,<br>
-    I will point to you<br>
-    and say—<br>
-    <b>this is how the heart learns to stay.</b>
+        Loving you feels less like fire<br>
+        and more like warmth—<br>
+        the kind that stays<br>
+        long after the night has gone.<br><br>
+
+        If forever ever asks me what it means,<br>
+        I will point to you<br>
+        and say—<br>
+        <b>this is how the heart learns to stay.</b>
+      </p>
+    </div>
+
     <audio id="loveSong" preload="auto" playsinline>
-  <source src="all-of-me.mp3" type="audio/mpeg">
-</audio>
-  </p>
-</div>
-
-    </p>
+      <source src="all-of-me.mp3" type="audio/mpeg">
+    </audio>
   </div>
 
+  <!-- SCRIPT -->
   <script>
-  function yesClicked(){
-    // hide first card
-    document.getElementById("card").style.display = "none";
+    function yesClicked(){
+      document.getElementById("card").style.display = "none";
+      document.getElementById("celebrate").style.display = "block";
 
-    // show celebration / poem section
-    document.getElementById("celebrate").style.display = "block";
+      const song = document.getElementById("loveSong");
+      song.volume = 0.7;
+      song.play().catch(err => console.log(err));
+    }
 
-    // play music
-    const song = document.getElementById("loveSong");
-    song.volume = 0.7;
-    song.play().catch(err => console.log(err));
-  }
+    function noClicked(){
+      alert("Aww 🥺 try again… my heart believes in us 💞");
+    }
+  </script>
 
-  function noClicked(){
-    alert("Aww 🥺 try again… my heart believes in us 💞");
-  }
-</script>
+</body>
+</html>
